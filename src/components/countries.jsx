@@ -202,7 +202,9 @@ class Countries extends Component {
                 />
               </label>
             </div>
-            <SearchBox value={searchQuery} onChange={this.handleSearch} />
+            <div className="col-12">
+              <SearchBox value={searchQuery} onChange={this.handleSearch} />
+            </div>
           </div>
 
           {countryList.length > 0 && (

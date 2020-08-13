@@ -11,26 +11,31 @@ class DetailsCard extends Component {
         <img src={flag} className="card-img-top" alt={`The flag of ${name}`} />
 
         <ul className="list-group list-group-flush">
-          <li className="list-group-item">
-            <p>Country name</p>
-            <h6>{name}</h6>
+          <li className="list-group-item p-1">
+            <p className="m-1">Country name</p>
+            <h5 className="ml-4 mt-2">{name}</h5>
           </li>
-          <li className="list-group-item">
-            <p>Population</p>
-            <h6>{population}</h6>
+
+          <li className="list-group-item p-1">
+            <p className="m-1">Population</p>
+            <h5 className="ml-4 mt-2">{population}</h5>
           </li>
-          <li className="list-group-item">
-            <p>Official currencies</p>
+          <li className="list-group-item p-1">
+            <p className="m-1">Official currencies</p>
             {currencies.map((c) => (
-              <h6
+              <h5
+                className="ml-4 mt-2"
                 key={c.code}
-              >{`${c.name} (${c.code}), Symbol: ${c.symbol}`}</h6>
+              >{`${c.name} (${c.code}), Symbol: ${c.symbol}`}</h5>
             ))}
           </li>
-          <li className="list-group-item">
-            <p>Rate to SEK</p>
+          <li className="list-group-item p-1">
+            <p className="m-1">Rate to SEK</p>
             {ratesToSek.map((r) => (
-              <h6 key={r.base}>{`1 ${r.base} = ${r.rate} SEK`}</h6>
+              <h5
+                className="ml-4 mt-2"
+                key={r.base}
+              >{`1 ${r.base} = ${r.rate} SEK`}</h5>
             ))}
           </li>
         </ul>
@@ -43,7 +48,7 @@ class DetailsCard extends Component {
             Add to my list
           </button>
         ) : (
-          <p className="card-text text-center">
+          <p className="p-2 card-text text-center table-success">
             This country is already on your list
           </p>
         )}
