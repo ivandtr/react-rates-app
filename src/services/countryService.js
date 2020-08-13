@@ -52,10 +52,7 @@ export function mapToViewCountry(country) {
     currencies,
     flag,
     name,
-    population: population.toLocaleString('en-SE', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }),
+    population: population.toLocaleString('en-SE'),
     ratesToSek,
   };
 }

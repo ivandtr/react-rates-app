@@ -33,12 +33,16 @@ class CountriesTable extends Component {
     {
       key: 'delete',
       content: (country) => (
-        <button
-          onClick={() => this.props.onDelete(country)}
-          className="btn btn-danger btn-sm"
-        >
-          Delete
-        </button>
+        <span>
+          <i
+            className="fa fa-times-circle"
+            onClick={() => this.props.onDelete(country)}
+          />
+          {/* <i
+            className="fa fa-times"
+            onClick={() => this.props.onDelete(country)}
+          /> */}
+        </span>
       ),
     },
   ];
