@@ -17,7 +17,7 @@ class CountriesTable extends Component {
 
     { path: 'name', label: 'Name' },
     { path: 'population', label: 'Population' },
-    { path: 'base', label: 'Currency' },
+    { path: 'base', label: 'Cur.' },
 
     {
       content: (country) => (
