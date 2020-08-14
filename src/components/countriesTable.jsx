@@ -49,7 +49,7 @@ class CountriesTable extends Component {
 
   conversionColumn = {
     path: 'convertedAmount',
-    label: 'SEK to local currency',
+    label: 'SEK to local cur.',
   };
 
   render() {
