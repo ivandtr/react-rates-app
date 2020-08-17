@@ -12,7 +12,7 @@ export function getAllCountryNames() {
 }
 
 export async function getCountries() {
-  const countryList = await getCountryList();
+  const countryList = await getUserCountryList();
 
   return Promise.all(
     countryList.map(async (countryName) => {
@@ -24,7 +24,7 @@ export async function getCountries() {
   );
 }
 
-export async function getCountryList() {
+export async function getUserCountryList() {
   const {
     data: { countryList },
   } = await getUser();

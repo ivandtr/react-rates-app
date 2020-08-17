@@ -7,7 +7,7 @@ import {
   mapToViewRow,
   getConvertedAmount,
   getCountries,
-  getCountryList,
+  getUserCountryList,
   getOptionDetails,
 } from '../services/countryService';
 import { paginate } from '../utils/paginate';
@@ -31,7 +31,7 @@ class Countries extends Component {
 
   async componentDidMount() {
     const countries = await getCountries();
-    const countryList = await getCountryList();
+    const countryList = await getUserCountryList();
     this.setState({ countries: countries.flat(), countryList });
   }
 
