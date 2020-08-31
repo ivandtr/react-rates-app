@@ -32,7 +32,7 @@ export async function getUserCountryList() {
 }
 
 export function getOptionDetails(countryName) {
-  return http.get(countryUrl(countryName.value));
+  return http.get(countryUrl(decodeURI(countryName.value)));
 }
 
 export function mapToViewCountry(country) {
