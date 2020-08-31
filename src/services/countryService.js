@@ -32,19 +32,17 @@ export async function getUserCountryList() {
 }
 
 export function getOptionDetails(countryName) {
-  return http.get(countryUrl(decodeURI(countryName.value)));
+  return http.get(countryUrl(countryName.value));
 }
 
 export function mapToViewCountry(country) {
   const { currencies, flag, name, population, rateSEK } = country;
   const ratesToSek = rateSEK.map((r) => ({
     base: r.base,
-    rate: parseFloat(
-      r.rates.SEK.toLocaleString('en-SE', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      }).replace(',', '.')
-    ),
+    rate: r.rates.SEK.toLocaleString('en-SE', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }),
   }));
 
   return {
@@ -68,7 +66,9 @@ export function mapToViewRow(country) {
 }
 
 export function getConvertedAmount(rateToSek, sekToConvert, base) {
-  return `${(sekToConvert / rateToSek).toLocaleString('en-SE', {
+  return `${(
+    sekToConvert / parseFloat(rateToSek.replace(',', '.'))
+  ).toLocaleString('en-SE', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   })} ${base}`;
