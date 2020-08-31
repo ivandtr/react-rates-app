@@ -32,7 +32,6 @@ export async function getUserCountryList() {
 }
 
 export function getOptionDetails(countryName) {
-  console.log('getcountrydetails', countryName);
   return http.get(countryUrl(countryName.value));
 }
 

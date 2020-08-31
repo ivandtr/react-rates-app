@@ -91,12 +91,15 @@ class Countries extends Component {
     if (!selectedOption) {
       this.setState({ optionDetails: '' });
     } else {
-      console.log(selectedOption);
-      const { data: optionDetails } = await getOptionDetails(selectedOption);
-      console.log('optiondetails', optionDetails);
-      this.setState({
-        optionDetails: mapToViewCountry(optionDetails),
-      });
+      try {
+        const { data: optionDetails } = await getOptionDetails(selectedOption);
+
+        this.setState({
+          optionDetails: mapToViewCountry(optionDetails),
+        });
+      } catch (ex) {
+        toast.error('This country is not available');
+      }
     }
   };
 
